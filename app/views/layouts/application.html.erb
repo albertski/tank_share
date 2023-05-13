@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>TankShare</title>
+    <%= render partial: 'shared/layouts/ga_tracking' %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,9 +12,15 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
+  <body class="bg-gray-100">
+    <div class="min-h-screen flex flex-col">
+      <%= render partial: 'layouts/header' %>
+
+      <main class="container mx-auto px-4 py-10 flex flex-col justify-center items-center">
+        <%= yield %>
+      </main>
+
+      <%= render partial: 'layouts/footer' %>
+    </div>
   </body>
 </html>
