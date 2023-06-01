@@ -11,5 +11,6 @@
 AllCops:
   Exclude:
     - 'bin/**/*'
+    - 'db/schema.rb'
 Layout/Documentation:
   Enabled: false
