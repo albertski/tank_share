@@ -1,0 +1,28 @@
+<div class="container mx-auto px-4 py-10 flex flex-col justify-center items-center">
+  <%= turbo_frame_tag 'message' do %>
+    <%= render 'email_signup/message' %>
+  <% end %>
+
+  <%= turbo_frame_tag 'signup-form', class: 'w-full max-w-md' do %>
+    <%= form_with model: @email_signup, url: signup_path, data: { controller: 'email_signup' } do |form| %>
+      <div class="mb-4">
+        <%= label_tag :first_name, 'First Name', class: 'block text-gray-700 text-sm font-bold mb-2' %>
+        <%= text_field_tag :first_name, nil, class: 'appearance-none border border-gray-300 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:border-blue-500' %>
+      </div>
+
+      <div class="mb-4">
+        <%= label_tag :last_name, 'Last Name', class: 'block text-gray-700 text-sm font-bold mb-2' %>
+        <%= text_field_tag :last_name, nil, class: 'appearance-none border border-gray-300 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:border-blue-500' %>
+      </div>
+
+      <div class="mb-4">
+        <%= label_tag :email, 'Email', class: 'block text-gray-700 text-sm font-bold mb-2' %>
+        <%= email_field_tag :email, nil, class: 'appearance-none border border-gray-300 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:border-blue-500' %>
+      </div>
+
+      <div>
+        <%= submit_tag 'Sign Up', class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

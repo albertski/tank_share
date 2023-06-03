@@ -12,5 +12,6 @@ AllCops:
   Exclude:
     - 'bin/**/*'
     - 'db/schema.rb'
+    - '**/*.erb'
 Layout/Documentation:
   Enabled: false
