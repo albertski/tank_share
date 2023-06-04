@@ -1,0 +1,22 @@
+<% if @email_signup.new_record? %>
+  <%= form_with model: @email_signup, url: signup_path, data: { controller: 'email_signup' } do |form| %>
+    <div class="mb-4">
+      <%= form.label :first_name, 'First Name', class: 'block text-gray-700 text-sm font-bold mb-2' %>
+      <%= form.text_field :first_name, class: 'appearance-none border border-gray-300 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:border-blue-500' %>
+    </div>
+
+    <div class="mb-4">
+      <%= form.label :last_name, 'Last Name', class: 'block text-gray-700 text-sm font-bold mb-2' %>
+      <%= form.text_field :last_name, class: 'appearance-none border border-gray-300 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:border-blue-500' %>
+    </div>
+
+    <div class="mb-4">
+      <%= form.label :email, 'Email', class: 'block text-gray-700 text-sm font-bold mb-2' %>
+      <%= form.email_field :email, class: 'appearance-none border border-gray-300 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:border-blue-500' %>
+    </div>
+
+    <div>
+      <%= form.submit 'Sign Up', class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' %>
+    </div>
+  <% end %>
+<% end %>

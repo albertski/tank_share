@@ -1,15 +1,11 @@
-<div id="message">
+<div id="email_signup_message">
   <% if flash[:notice].present? %>
-    <%= turbo_stream.append 'message' do %>
-      <div class="notice">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
+    <div class="notice">
+      <%= flash[:notice] %>
+    </div>
   <% elsif flash[:alert].present? %>
-    <%= turbo_stream.append 'message' do %>
-      <div class="alert">
-        <%= flash[:alert] %>
-      </div>
-    <% end %>
+    <div class="alert">
+      <%= flash[:alert] %>
+    </div>
   <% end %>
 </div>

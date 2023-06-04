@@ -15,3 +15,7 @@ AllCops:
     - '**/*.erb'
 Layout/Documentation:
   Enabled: false
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - '**/*_spec.rb'
