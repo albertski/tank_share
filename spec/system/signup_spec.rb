@@ -15,7 +15,7 @@ RSpec.describe 'Signup', type: :system do
       end
     end
 
-    context 'and user fills out first name, last name, and email' do
+    context 'and user fills out form' do
       before do
         fill_in 'First Name', with: 'John'
         fill_in 'Last Name', with: 'Doe'
@@ -41,6 +41,16 @@ RSpec.describe 'Signup', type: :system do
       context 'and email already exists' do
         let!(:email_signup) do
           create(:email_signup, email: 'john@example.com', agree: true)
+        end
+
+        include_examples 'does not create email signup'
+      end
+
+      context 'when a user fills out the hidden honeypot(spam catcher) field' do
+        before do
+          field = find('input[name="email_signup[phone_number]"]',
+                       visible: false)
+          page.execute_script("arguments[0].value = '7777777777'", field)
         end
 
         include_examples 'does not create email signup'

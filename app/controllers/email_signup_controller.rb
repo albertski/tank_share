@@ -19,7 +19,7 @@ class EmailSignupController < ApplicationController
 
   def email_signup_params
     params.require(:email_signup)
-          .permit(:first_name, :last_name, :email, :agree)
+          .permit(:first_name, :last_name, :email, :agree, :phone_number)
   end
 
   def first_name
