@@ -15,6 +15,13 @@
       <%= form.email_field :email, class: 'appearance-none border border-gray-300 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:border-blue-500' %>
     </div>
 
+    <div class="mb-4">
+      <label class="flex items-center">
+        <%= form.check_box :agree, class: 'form-checkbox text-blue-500' %>
+        <span class="ml-2 text-gray-700 text-sm font-bold">I agree to the terms and conditions</span>
+      </label>
+    </div>
+
     <div>
       <%= form.submit 'Sign Up', class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' %>
     </div>
