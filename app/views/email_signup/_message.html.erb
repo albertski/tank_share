@@ -1,10 +1,10 @@
-<div id="email_signup_message">
+<div id="email_signup_message" class="w-full max-w-md mx-auto">
   <% if flash[:notice].present? %>
-    <div class="notice">
+    <div class="notice bg-green-400 text-white font-bold px-4 py-2 mb-4">
       <%= flash[:notice] %>
     </div>
   <% elsif flash[:alert].present? %>
-    <div class="alert">
+    <div class="alert bg-red-400 text-white font-bold px-4 py-2 mb-4">
       <%= flash[:alert] %>
     </div>
   <% end %>
