@@ -32,9 +32,15 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
+  config.include ActiveJob::TestHelper
+
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.before(:each) do
+    ActiveJob::Base.queue_adapter = :async
   end
 
   config.around(:each) do |example|
