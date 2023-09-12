@@ -43,7 +43,7 @@ FROM base
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y default-mysql-client libsqlite3-0 libvips postgresql-client && \
+    apt-get install --no-install-recommends -y default-mysql-client libsqlite3-0 libvips postgresql-client curl && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Copy built artifacts: gems, application
