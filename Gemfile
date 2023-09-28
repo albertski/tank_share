@@ -19,7 +19,7 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
+gem 'rails', '>= 7'
 
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'
