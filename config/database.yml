@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: tank_share_production
-  username: tank_share
-  password: <%= ENV["TANK_SHARE_DATABASE_PASSWORD"] %>
+  database: <%= ENV["POSTGRES_DB"] %>
+  username: <%= ENV["POSTGRES_USER"] %>
+  password: <%= ENV["POSTGRES_PASSWORD"] %>
+  host: <%= ENV["POSTGRES_HOST"] %>
