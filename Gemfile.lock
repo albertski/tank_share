@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/albertski/cloudflare-email.git
+  revision: ee2a7badb824e1f473e4308f6ed16544012c9d1c
+  branch: main
+  specs:
+    cloudflare-email (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -310,6 +317,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   capybara
+  cloudflare-email!
   database_cleaner
   debug
   dotenv-rails

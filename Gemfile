@@ -6,6 +6,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.1'
 
+gem(
+  'cloudflare-email',
+  git: 'https://github.com/albertski/cloudflare-email.git',
+  branch: 'main'
+)
+
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails'
 
