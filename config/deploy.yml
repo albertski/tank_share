@@ -9,6 +9,10 @@ env:
 servers:
   web:
     - 167.172.137.187
+  job:
+    hosts:
+      - 167.172.137.187
+    cmd: "bundle exec sidekiq -C config/sidekiq.yml -v"
 registry:
   username:
     - KAMAL_REGISTRY_USERNAME
@@ -34,3 +38,6 @@ accessories:
     port: 6379
     directories:
       - data:/data
+    env:
+      clear:
+        ENABLE_OVERCOMMIT_MEMORY: true
