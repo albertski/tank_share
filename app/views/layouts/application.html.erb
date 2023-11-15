@@ -17,6 +17,8 @@
       <%= render partial: 'layouts/header' %>
 
       <main class="container mx-auto px-4 py-10 flex flex-col justify-center items-center">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
         <%= yield %>
       </main>
 

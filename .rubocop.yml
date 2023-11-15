@@ -13,7 +13,7 @@ AllCops:
     - 'bin/**/*'
     - 'db/schema.rb'
     - '**/*.erb'
-Layout/Documentation:
+Style/Documentation:
   Enabled: false
 Metrics/BlockLength:
   Enabled: true
