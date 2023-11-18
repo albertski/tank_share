@@ -1,24 +1,16 @@
-# README
+# TankShare
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Tank Share is a social media site for fish tank enthusiasts. Connect with other tank owners, share information and pictures, and track your tank's progress over time.
 
-Things you may want to cover:
+## Installation
+```
+cp example.env .env
+```
 
-* Ruby version
+## Deployment
 
-* System dependencies
+Deployment has been setup with Kamal. To deploy to production run the following:
+```
+kamal deploy
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
