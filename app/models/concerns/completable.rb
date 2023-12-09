@@ -13,6 +13,10 @@ module Completable
     fields_complete.zero? ? DEFAULT_COMPLETE_PERCENTAGE : percent_complete
   end
 
+  def incomplete_completable_attributes
+    self.class::COMPLETABLE_ATTRIBUTES.select { |f| __send__(f).blank? }
+  end
+
   private
 
   def fields_complete
