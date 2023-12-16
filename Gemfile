@@ -59,6 +59,8 @@ gem 'dotenv-rails'
 
 gem 'devise'
 
+gem 'countries'
+
 # Use Sass to process CSS
 # gem 'sassc-rails'
 
