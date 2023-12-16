@@ -9,7 +9,7 @@ module UserHelper
   end
 
   def level_options
-    levels = User.levels.map { |key, value| [key, value] }
+    levels = User.levels.map { |key, _| [key.titleize, key] }
     levels.unshift(['Select a level', nil])
     levels
   end

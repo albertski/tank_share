@@ -28,11 +28,11 @@ RSpec.describe UserHelper, type: :helper do
       expect(levels).not_to be_empty
       expect(levels.first).to eq(['Select a level', nil])
       expect(levels[1..]).to eq([
-                                  %w[novice Novice],
-                                  %w[intermediate Intermediate],
-                                  %w[advanced Advanced],
-                                  %w[expert Expert],
-                                  %w[master Master]
+                                  %w[Novice novice],
+                                  %w[Intermediate intermediate],
+                                  %w[Advanced advanced],
+                                  %w[Expert expert],
+                                  %w[Master master]
                                 ])
     end
   end

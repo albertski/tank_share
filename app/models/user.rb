@@ -9,10 +9,10 @@ class User < ApplicationRecord
   COMPLETABLE_ATTRIBUTES = %i[first_name last_name city province postal_code country years_tanking level].freeze
 
   enum level: {
-    novice: 'Novice',
-    intermediate: 'Intermediate',
-    advanced: 'Advanced',
-    expert: 'Expert',
-    master: 'Master'
+    novice: 0,
+    intermediate: 1,
+    advanced: 2,
+    expert: 3,
+    master: 4
   }
 end
