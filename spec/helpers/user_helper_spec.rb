@@ -19,4 +19,21 @@ RSpec.describe UserHelper, type: :helper do
       end
     end
   end
+
+  describe '#level_options' do
+    subject(:levels) { helper.level_options }
+
+    it 'returns a list of levels' do
+      expect(levels).to be_an(Array)
+      expect(levels).not_to be_empty
+      expect(levels.first).to eq(['Select a level', nil])
+      expect(levels[1..]).to eq([
+                                  %w[novice Novice],
+                                  %w[intermediate Intermediate],
+                                  %w[advanced Advanced],
+                                  %w[expert Expert],
+                                  %w[master Master]
+                                ])
+    end
+  end
 end

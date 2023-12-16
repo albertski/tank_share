@@ -7,4 +7,10 @@ module UserHelper
     countries.unshift(['Select a Country', nil])
     countries
   end
+
+  def level_options
+    levels = User.levels.map { |key, value| [key, value] }
+    levels.unshift(['Select a level', nil])
+    levels
+  end
 end

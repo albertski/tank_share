@@ -7,4 +7,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   COMPLETABLE_ATTRIBUTES = %i[first_name last_name city province postal_code country years_tanking level].freeze
+
+  enum level: {
+    novice: 'Novice',
+    intermediate: 'Intermediate',
+    advanced: 'Advanced',
+    expert: 'Expert',
+    master: 'Master'
+  }
 end
