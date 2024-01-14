@@ -15,4 +15,9 @@ class User < ApplicationRecord
     expert: 3,
     master: 4
   }
+
+  enum role: {
+    member: 0,
+    admin: 1
+  }
 end
