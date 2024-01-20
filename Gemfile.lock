@@ -167,6 +167,13 @@ GEM
       net-smtp
     marcel (1.0.2)
     matrix (0.4.2)
+    measured (2.8.2)
+      activesupport (>= 5.2)
+    measured-rails (2.8.2)
+      activemodel (>= 5.2)
+      activerecord (>= 5.2)
+      measured (= 2.8.2)
+      railties (>= 5.2)
     method_source (1.0.0)
     mini_mime (1.1.5)
     minitest (5.20.0)
@@ -364,6 +371,7 @@ DEPENDENCIES
   faker
   importmap-rails
   jbuilder
+  measured-rails
   overcommit
   pg (~> 1.1)
   pry-rails

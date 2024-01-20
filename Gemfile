@@ -30,8 +30,6 @@ gem 'rails', '>= 7'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'
 
-gem 'sidekiq'
-
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
@@ -55,11 +53,11 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
-gem 'dotenv-rails'
-
-gem 'devise'
-
 gem 'countries'
+gem 'devise'
+gem 'dotenv-rails'
+gem 'measured-rails'
+gem 'sidekiq'
 
 # Use Sass to process CSS
 # gem 'sassc-rails'
