@@ -3,6 +3,8 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  get 'tanks/new'
+  get 'tanks/create'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -13,5 +15,6 @@ Rails.application.routes.draw do
   post 'signup', to: 'email_signup#create'
   get 'users/profile', to: 'users#profile'
   resources :users
+  resources :tanks
   get 'up', to: proc { [200, {}, ['OK']] }
 end
