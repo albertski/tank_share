@@ -11,14 +11,14 @@
     <div class="w-full md:w-1/2 px-0 mb-6 md:mb-0">
       <%= form.label :total_volume, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
       <div class="flex">
-        <%= form.text_field :total_volume_value, type: :number, class: "appearance-none block w-full text-gray-700 border border-gray-200 rounded-l py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-indigo-500" %>
+        <%= form.text_field :total_volume_value, type: :number, step: :any, class: "appearance-none block w-full text-gray-700 border border-gray-200 rounded-l py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-indigo-500" %>
         <%= form.select :total_volume_unit, options_for_select(volume_options), class: "appearance-none border border-gray-200 text-gray-700 py-3 px-4 rounded-r leading-tight focus:outline-none focus:bg-white focus:border-indigo-500" %>
       </div>
     </div>
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
       <%= form.label :display_volume, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
       <div class="flex">
-        <%= form.text_field :display_volume_value, type: :number, class: "appearance-none block w-full text-gray-700 border border-gray-200 rounded-l py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-indigo-500" %>
+        <%= form.text_field :display_volume_value, type: :number, step: :any, class: "appearance-none block w-full text-gray-700 border border-gray-200 rounded-l py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-indigo-500" %>
         <%= form.select :display_volume_unit, options_for_select(volume_options), class: "appearance-none border border-gray-200 text-gray-700 py-3 px-4 rounded-r leading-tight focus:outline-none focus:bg-white focus:border-indigo-500" %>
       </div>
     </div>
@@ -27,14 +27,14 @@
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
       <%= form.label :sub_volume, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
       <div class="flex">
-        <%= form.text_field :sub_volume_value, type: :number, class: "appearance-none block w-full text-gray-700 border border-gray-200 rounded-l py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-indigo-500" %>
+        <%= form.text_field :sub_volume_value, type: :number, step: :any, class: "appearance-none block w-full text-gray-700 border border-gray-200 rounded-l py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-indigo-500" %>
         <%= form.select :sub_volume_unit, options_for_select(volume_options), class: "appearance-none border border-gray-200 text-gray-700 py-3 px-4 rounded-r leading-tight focus:outline-none focus:bg-white focus:border-indigo-500" %>
       </div>
     </div>
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
       <%= form.label :glass_thickness, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
       <div class="flex">
-        <%= form.text_field :glass_thickness_value, type: :number, class: "appearance-none block w-full text-gray-700 border border-gray-200 rounded-l py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-indigo-500" %>
+        <%= form.text_field :glass_thickness_value, type: :number, step: :any, class: "appearance-none block w-full text-gray-700 border border-gray-200 rounded-l py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-indigo-500" %>
         <%= form.select :glass_thickness_unit, options_for_select(thickness_options), class: "appearance-none border border-gray-200 text-gray-700 py-3 px-4 rounded-r leading-tight focus:outline-none focus:bg-white focus:border-indigo-500" %>
       </div>
     </div>
