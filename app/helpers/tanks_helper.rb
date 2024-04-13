@@ -3,15 +3,15 @@
 module TanksHelper
   def volume_options
     [
-      [ 'Gallons', 'us_gallon'],
-      ['Liters', 'l']
+      %w[Gallons us_gallon],
+      %w[Liters l]
     ]
   end
 
   def thickness_options
     [
-      ['Inches', 'in'],
-      ['Millimetersillim', 'mm']
+      %w[Inches in],
+      %w[Millimeters mm]
     ]
   end
 end
