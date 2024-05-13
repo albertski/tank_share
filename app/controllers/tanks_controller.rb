@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class TanksController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     @tank = Tank.new(tank_params)
     @tank.user_id = Current.user.id
