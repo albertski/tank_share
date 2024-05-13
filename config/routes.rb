@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   get 'users/profile', to: 'users#profile'
   resources :users
   resources :tanks
+  resources :user_tanks, only: [:index]
   get 'up', to: proc { [200, {}, ['OK']] }
 end
