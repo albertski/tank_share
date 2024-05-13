@@ -3,10 +3,11 @@
 class TanksController < ApplicationController
   def create
     @tank = Tank.new(tank_params)
+    @tank.user_id = Current.user.id
     if @tank.save
       redirect_to @tank, notice: 'Tank was successfully created.'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

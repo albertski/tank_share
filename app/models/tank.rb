@@ -7,4 +7,6 @@ class Tank < ApplicationRecord
   measured Measured::Volume, :display_volume
   measured Measured::Volume, :sub_volume
   measured Measured::Length, :glass_thickness
+
+  validates :name, :description, presence: true
 end
