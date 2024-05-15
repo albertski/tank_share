@@ -7,7 +7,7 @@ class TanksController < ApplicationController
     @tank = Tank.new(tank_params)
     @tank.user_id = Current.user.id
     if @tank.save
-      redirect_to @tank, notice: 'Tank was successfully created.'
+      redirect_to user_tanks_path, notice: 'Tank was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
