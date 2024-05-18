@@ -1,0 +1,12 @@
+<div class="max-w-sm rounded overflow-hidden shadow-lg">
+  <div class="h-48 w-full bg-gray-200 flex items-center justify-center">
+    <% if user_tank.images.attached? %>
+      <%= image_tag url_for(user_tank.images.first), class: "object-cover h-full w-full" %>
+    <% else %>
+      <%= image_tag 'tanks/place_holder_tank.jpg', alt: 'Placeholder', class: 'object-cover h-full w-full' %>
+    <% end %>
+  </div>
+  <div class="px-6 py-4">
+    <div class="font-bold text-xl mb-2"><%= user_tank.name %></div>
+  </div>
+</div>
