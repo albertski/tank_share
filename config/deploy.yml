@@ -6,6 +6,10 @@ env:
     - KAMAL_REGISTRY_PASSWORD
     - KAMAL_REGISTRY_USERNAME
     - REDIS_URL
+    - POSTGRES_USER
+    - POSTGRES_DB
+    - POSTGRES_PASSWORD
+    - POSTGRES_HOST
 servers:
   web:
     - 167.172.137.187
@@ -31,7 +35,7 @@ accessories:
         - POSTGRES_HOST
     directories:
       - data:/var/lib/postgresql/data
-    cmd: postgres -c max_connections=20 -c shared_buffers=128MB -c effective_cache_size=6GB -c maintenance_work_mem=128MB -c checkpoint_completion_target=0.9 -c wal_buffers=16MB -c default_statistics_target=100 -c random_page_cost=1.1 -c effective_io_concurrency=200 -c work_mem=10485kB -c min_wal_size=1GB -c max_wal_size=4GB -c max_worker_processes=4 -c max_parallel_workers_per_gather=2 -c max_parallel_workers=4 -c max_parallel_maintenance_workers=2
+   # cmd: postgres -c max_connections=20 -c shared_buffers=128MB -c effective_cache_size=6GB -c maintenance_work_mem=128MB -c checkpoint_completion_target=0.9 -c wal_buffers=16MB -c default_statistics_target=100 -c random_page_cost=1.1 -c effective_io_concurrency=200 -c work_mem=10485kB -c min_wal_size=1GB -c max_wal_size=4GB -c max_worker_processes=4 -c max_parallel_workers_per_gather=2 -c max_parallel_workers=4 -c max_parallel_maintenance_workers=2
   redis:
     image: redis:7.0
     host: 167.172.137.187
