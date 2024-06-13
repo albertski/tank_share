@@ -13,6 +13,9 @@
 # Ignore environemt variables.
 .env
 
+# Ignore .kamal
+.kamal
+
 # Ignore all logfiles and tempfiles.
 log/*
 tmp/*
