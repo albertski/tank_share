@@ -56,7 +56,7 @@ gem 'bootsnap', require: false
 gem 'countries'
 gem 'devise'
 gem 'dotenv-rails'
-gem 'measured-rails'
+gem 'measured'
 gem 'sidekiq'
 
 # Use Sass to process CSS
