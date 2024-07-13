@@ -4,6 +4,10 @@ class TanksController < ApplicationController
   before_action :authenticate_user!, except: :show
   before_action :set_tank, only: [:destroy, :edit, :update]
 
+  def new
+    @tank = Tank.new
+  end
+
   def create
     @tank = Tank.new(tank_params)
     @tank.user_id = Current.user.id
