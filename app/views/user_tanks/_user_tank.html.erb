@@ -10,8 +10,8 @@
     <div class="px-6 py-4">
       <div class="font-bold text-xl mb-2"><%= user_tank.name %></div>
       <div class="flex justify-around mt-4 space-x-2">
-        <%= link_to 'View', tank_path(user_tank), class: 'inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out' %>
-        <%= link_to 'Edit', edit_tank_path(user_tank), class: 'inline-block bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out' %>
+        <%= link_to 'View', tank_path(user_tank), class: 'inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out', data: { turbo_frame: '_top' } %>
+        <%= link_to 'Edit', edit_tank_path(user_tank), class: 'inline-block bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out', data: { turbo_frame: '_top' } %>
         <%= link_to 'Delete', tank_path(user_tank), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'inline-block bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out' %>
       </div>
     </div>
