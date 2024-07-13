@@ -2,7 +2,7 @@
 
 class TanksController < ApplicationController
   before_action :authenticate_user!, except: :show
-  before_action :set_tank, only: [:destroy]
+  before_action :set_tank, only: [:destroy, :edit, :update]
 
   def create
     @tank = Tank.new(tank_params)
@@ -22,6 +22,16 @@ class TanksController < ApplicationController
     end
   end
 
+  def update
+    if @tank.update(tank_params)
+      respond_to do |format|
+        format.html { redirect_to edit_tank_path(@tank), notice: 'Tank was successfully updated.' }
+      end
+    else
+      render :edit
+    end
+  end
+
   private
 
   def set_tank
@@ -29,8 +39,8 @@ class TanksController < ApplicationController
   end
 
   def tank_params
-    params.permit(:name, :description, :total_volume_value, :total_volume_unit, :display_volume_value,
-                  :display_volume_unit, :sub_volume_value, :sub_volume_unit, :glass_thickness_value,
-                  :glass_thickness_unit, images: [])
+    params.require(:tank).permit(:name, :description, :total_volume_value, :total_volume_unit, :display_volume_value,
+                                 :display_volume_unit, :sub_volume_value, :sub_volume_unit, :glass_thickness_value,
+                                 :glass_thickness_unit, images: [])
   end
 end
