@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_20_163744) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_18_225219) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,6 +50,24 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_20_163744) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_email_signups_on_email", unique: true
+  end
+
+  create_table "tank_parameters", force: :cascade do |t|
+    t.float "ph"
+    t.float "temp"
+    t.float "salinity"
+    t.float "alkalinity"
+    t.float "ammonia"
+    t.float "nitrite"
+    t.float "nitrate"
+    t.float "phosphate"
+    t.float "calcium"
+    t.float "magnesium"
+    t.date "date"
+    t.bigint "tank_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tank_id"], name: "index_tank_parameters_on_tank_id"
   end
 
   create_table "tanks", force: :cascade do |t|
@@ -92,5 +110,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_20_163744) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "tank_parameters", "tanks"
   add_foreign_key "tanks", "users"
 end
