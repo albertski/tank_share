@@ -59,6 +59,8 @@ gem 'dotenv-rails'
 gem 'measured'
 gem 'sidekiq'
 
+gem 'thruster', require: false
+
 # Use Sass to process CSS
 # gem 'sassc-rails'
 
