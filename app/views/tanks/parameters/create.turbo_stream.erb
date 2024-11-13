@@ -1,0 +1,7 @@
+<%= turbo_stream.prepend "tank_parameters" do %>
+  <%= render partial: 'tanks/parameters/tank_parameters', locals: { tank_parameters: @tank_parameters, tank: @tank } %>
+<% end %>
+
+<%= turbo_stream.replace "tank_parameters_form" do %>
+  <%= render partial: 'tanks/parameters/form', locals: { tank: @tank, new_tank_parameters: @tank.tank_parameters.new } %>
+<% end %>

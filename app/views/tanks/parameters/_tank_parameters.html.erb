@@ -1,0 +1,25 @@
+<%= turbo_frame_tag dom_id(tank_parameters) do %>
+  <div class="border p-4 rounded-md shadow-sm mb-4 min-w-[800px]">
+    <div class="flex justify-between items-center">
+      <div class="flex items-center">
+        <h3 class="text-lg font-semibold mr-4">Parameters for <%= tank_parameters.date %></h3>
+        <p class="text-sm text-gray-500"><%= tank_parameters.created_at.strftime("%b %d, %Y %H:%M") %></p>
+      </div>
+
+      <%= link_to 'Delete', tank_parameter_path(tank, tank_parameters), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete?' }, class: 'bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 ml-2' %>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 mt-2">
+      <div><strong>PH:</strong> <%= tank_parameters.ph %></div>
+      <div><strong>Temp (F):</strong> <%= tank_parameters.temp %></div>
+      <div><strong>Salinity (d SG):</strong> <%= tank_parameters.salinity %></div>
+      <div><strong>Alkalinity (dKH):</strong> <%= tank_parameters.alkalinity %></div>
+      <div><strong>Ammonia (ppm):</strong> <%= tank_parameters.ammonia %></div>
+      <div><strong>Nitrite (ppm):</strong> <%= tank_parameters.nitrite %></div>
+      <div><strong>Nitrate (ppm):</strong> <%= tank_parameters.nitrate %></div>
+      <div><strong>Phosphate (ppm):</strong> <%= tank_parameters.phosphate %></div>
+      <div><strong>Calcium (ppm):</strong> <%= tank_parameters.calcium %></div>
+      <div><strong>Magnesium (ppm):</strong> <%= tank_parameters.magnesium %></div>
+    </div>
+  </div>
+<% end %>

@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   post 'signup', to: 'email_signup#create'
   get 'users/profile', to: 'users#profile'
   resources :users
-  resources :tanks
+  resources :tanks do
+    resources :parameters, module: :tanks
+  end
   resources :user_tanks, only: [:index]
   get 'up', to: proc { [200, {}, ['OK']] }
 end

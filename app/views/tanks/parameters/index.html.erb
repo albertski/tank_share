@@ -1,0 +1,15 @@
+<h1>Tank Parameters</h1>
+
+<div class="max-w-4xl mx-auto p-4">
+  <div class="py-4"><%= link_to 'Back to Tank', edit_tank_path(@tank), class: 'bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600' %></div>
+  <h2 class="text-xl font-semibold mb-4">Add Tank Parameters</h2>
+
+  <%= render partial: 'tanks/parameters/form', locals: { tank: @tank, new_tank_parameters: @new_tank_parameters } %>
+</div>
+
+<div class="max-w-4xl mx-auto p-4">
+  <h2 class="text-xl font-semibold mb-4">Parameter Records</h2>
+  <%= turbo_frame_tag "tank_parameters" do %>
+    <%= render partial: "tanks/parameters/tank_parameters", collection: @tank_parameters, locals: { tank: @tank } %>
+  <% end %>
+</div>

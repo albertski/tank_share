@@ -2,7 +2,7 @@
 
 class TanksController < ApplicationController
   before_action :authenticate_user!, except: :show
-  before_action :set_tank, only: [:destroy, :edit, :update]
+  before_action :set_tank, only: %i[show destroy edit update]
 
   def new
     @tank = Tank.new

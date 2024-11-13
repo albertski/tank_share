@@ -1,4 +1,5 @@
-<%= form_with(model: tank, local: true, class: "w-full") do |form| %>
+
+<%= form_with(model: tank, local: true, class: 'w-full') do |form| %>
   <%= render 'shared/errors', resource: tank %>
 
   <div class="mb-6">
@@ -50,4 +51,6 @@
       <%= form.submit "Submit", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
     </div>
   </div>
+
+  <div class="py-4"><%= link_to 'Add Parameters', tank_parameters_path(tank), class: 'bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600' %></div>
 <% end %>
