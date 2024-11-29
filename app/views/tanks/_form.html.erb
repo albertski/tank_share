@@ -52,5 +52,8 @@
     </div>
   </div>
 
-  <div class="py-4"><%= link_to 'Add Parameters', tank_parameters_path(tank), class: 'bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600' %></div>
+  <% if tank.persisted? %>
+    <div class="py-4"><%= link_to 'Add Parameters', tank_parameters_path(tank), class: 'bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600' %></div>
+    <div class="py-4"><%= link_to 'Add Equipment', tank_equipments_path(tank), class: 'bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600' %></div>
+  <% end %>
 <% end %>

@@ -4,6 +4,7 @@ class Tank < ApplicationRecord
   has_many_attached :images
   belongs_to :user
   has_many :tank_parameters
+  has_many :equipment
 
   measured Measured::Volume, :total_volume
   measured Measured::Volume, :display_volume

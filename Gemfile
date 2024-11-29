@@ -28,7 +28,7 @@ gem 'puma', '~> 6.0'
 gem 'rails', '>= 7'
 
 # Use Redis adapter to run Action Cable in production
-gem 'redis', '~> 4.0'
+gem "redis", ">= 4.0.1"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'

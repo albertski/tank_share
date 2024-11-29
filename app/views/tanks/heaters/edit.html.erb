@@ -1,0 +1,9 @@
+<div class="container">
+  <%= link_to sanitize("&larr; Back to Tamk"), tank_equipments_path(@tank) %>
+
+  <div class="header">
+    <h1>Edit Heater</h1>
+  </div>
+
+  <%= render partial: 'tanks/equipments/form', locals: { tank: @tank, equipment: @equipment } %>
+</div>
