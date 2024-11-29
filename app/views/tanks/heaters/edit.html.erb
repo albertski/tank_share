@@ -5,5 +5,7 @@
     <h1>Edit Heater</h1>
   </div>
 
-  <%= render partial: 'tanks/equipments/form', locals: { tank: @tank, equipment: @equipment } %>
+  <%= turbo_frame_tag @equipment.turbo_frame_tag do %>
+    <%= render partial: 'tanks/equipments/form', locals: { tank: @tank, equipment: @equipment } %>
+  <% end %>
 </div>

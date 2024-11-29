@@ -1,17 +1,21 @@
 <h1>Tank Equipment</h1>
 
 <h2>Heaters</h2>
-<% @tank.equipment.heaters.each do |heater| %>
-  <%= render "tanks/equipments/equipment", equipment: heater %>
-<% end %>
-<%= link_to "Add Heater", new_tank_heater_path(@tank),  class: "btn btn--primary" %>
+<div id="<%= @tank.equipment.heaters.new.type.pluralize %>">
+  <% @tank.equipment.heaters.each do |heater| %>
+    <%= render 'tanks/equipments/equipment', equipment: heater %>
+  <% end %>
+</div>
+<%= turbo_frame_tag @tank.equipment.heaters.new.turbo_frame_tag %>
+
+<%= link_to 'Add Heater', new_tank_heater_path(@tank), class: 'btn btn--primary', data: { turbo_frame: @tank.equipment.heaters.new.turbo_frame_tag } %>
 
 <h2>Lighting</h2>
 <% @tank.equipment.lights.each do |light| %>
-  <%= render "tanks/equipments/equipment", equipment: light %>
+  <%= render 'tanks/equipments/equipment', equipment: light %>
 <% end %>
 
 <h2>Pumps</h2>
 <% @tank.equipment.pumps.each do |pump| %>
-  <%= render "tanks/equipments/equipment", equipment: pump %>
+  <%= render 'tanks/equipments/equipment', equipment: pump %>
 <% end %>

@@ -7,7 +7,18 @@ module Tanks
 
     def create
       if @equipment.save
-        redirect_to tank_equipments_path(@tank), notice: 'Equipment was successfully created.'
+        respond_to do |format|
+          format.turbo_stream do
+            render turbo_stream: [
+              turbo_stream.append(@equipment.type.pluralize, partial: 'tanks/equipments/equipment',
+                                                             locals: { equipment: @equipment }),
+              turbo_stream.update(
+                @tank.equipment.new(equipmentable: @equipment.equipmentable_type.constantize.new).turbo_frame_tag, ''
+              )
+            ]
+          end
+          format.html { redirect_to tank_equipments_path(@tank), notice: 'Equipment was successfully created.' }
+        end
       else
         render :new, status: :unprocessable_entity
       end
@@ -23,7 +34,11 @@ module Tanks
 
     def destroy
       @equipment.destroy
-      redirect_to tank_equipments_path(@tank), notice: 'Equipment was successfully destroyed.'
+
+      respond_to do |format|
+        format.turbo_stream { render turbo_stream: turbo_stream.remove(@equipment.turbo_frame_tag) }
+        format.html { redirect_to tank_equipments_path(@tank), notice: 'Equipment was successfully destroyed.' }
+      end
     end
 
     private
