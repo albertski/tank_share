@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Create Heaters', type: :system do
+RSpec.describe 'Create Heater', type: :system do
   let(:user) { create(:user) }
   let(:tank) { create(:tank, user: user) }
 
