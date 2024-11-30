@@ -5,7 +5,7 @@
     <h1><%= title %></h1>
   </div>
 
-  <%= turbo_frame_tag equipment_frame_tag do %>
+  <%= turbo_frame_tag equipment.turbo_frame_tag do %>
     <%= render partial: 'tanks/equipments/form', locals: { tank: tank, equipment: equipment } %>
   <% end %>
 </div>

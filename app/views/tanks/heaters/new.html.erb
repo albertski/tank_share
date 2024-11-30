@@ -1,11 +1,7 @@
-<div class="container">
-  <%= link_to sanitize("&larr; Back to Tamk"), tank_equipments_path(@tank) %>
-
-  <div class="header">
-    <h1>New Heater</h1>
-  </div>
-
-  <%= turbo_frame_tag @tank.equipment.heaters.new.turbo_frame_tag do %>
-    <%= render partial: 'tanks/equipments/form', locals: { tank: @tank, equipment: @equipment } %>
-  <% end %>
-</div>
+<%= render partial: 'shared/equipment/new',
+           locals: {
+             title: 'New Heater',
+             tank: @tank,
+             equipment: @equipment,
+             equipment_frame_tag: @tank.equipment.heaters.new.turbo_frame_tag
+           } %>
