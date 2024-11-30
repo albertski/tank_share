@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Delete light', type: :system do
+RSpec.describe 'Update light', type: :system do
   let(:user)   { create(:user) }
   let(:tank)   { create(:tank, user: user) }
   let!(:light) { create(:light, tank: tank) }

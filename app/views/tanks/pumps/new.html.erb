@@ -1,0 +1,7 @@
+<%= render partial: 'shared/equipment/new',
+           locals: {
+             title: 'New Pump',
+             tank: @tank,
+             equipment: @equipment,
+             equipment_frame_tag: @tank.equipment.pumps.new.turbo_frame_tag
+           } %>

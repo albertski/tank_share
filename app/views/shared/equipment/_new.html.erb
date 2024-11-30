@@ -1,0 +1,11 @@
+<div class="container">
+  <%= link_to sanitize("&larr; Back to Tamk"), tank_equipments_path(tank) %>
+
+  <div class="header">
+    <h1><%= title %></h1>
+  </div>
+
+  <%= turbo_frame_tag equipment_frame_tag do %>
+    <%= render partial: 'tanks/equipments/form', locals: { tank: tank, equipment: equipment } %>
+  <% end %>
+</div>

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :equipments, module: :tanks
     resources :heaters, module: :tanks
     resources :lights, module: :tanks
+    resources :pumps, module: :tanks
   end
   resources :user_tanks, only: [:index]
   get 'up', to: proc { [200, {}, ['OK']] }

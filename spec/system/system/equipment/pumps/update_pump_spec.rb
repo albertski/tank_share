@@ -2,16 +2,16 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Update Heater', type: :system do
-  let(:user)    { create(:user) }
-  let(:tank)    { create(:tank, user: user) }
-  let!(:heater) { create(:heater, tank: tank) }
+RSpec.describe 'Update pump', type: :system do
+  let(:user)  { create(:user) }
+  let(:tank)  { create(:tank, user: user) }
+  let!(:pump) { create(:pump, tank: tank) }
 
   before { sign_in user }
 
-  it 'allows you to update a heater' do
+  it 'allows you to update a pump' do
     visit tank_equipments_path(tank)
-    assert_text heater.equipment.title
+    assert_text pump.equipment.title
 
     click_on 'Edit'
 

@@ -8,7 +8,6 @@ FactoryBot.define do
       quantity { 1 }
     end
 
-    # After building the heater, automatically associate it with an Equipment record
     after(:build) do |light, evaluator|
       light.build_equipment(
         equipmentable: light,
