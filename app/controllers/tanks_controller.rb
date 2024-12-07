@@ -45,6 +45,8 @@ class TanksController < ApplicationController
   def tank_params
     params.require(:tank).permit(:name, :description, :total_volume_value, :total_volume_unit, :display_volume_value,
                                  :display_volume_unit, :sub_volume_value, :sub_volume_unit, :glass_thickness_value,
-                                 :glass_thickness_unit, images: [])
+                                 :glass_thickness_unit, images: []).tap do |permitted|
+      permitted[:images]&.reject!(&:blank?)
+    end
   end
 end
