@@ -5,12 +5,18 @@ export default class extends Controller {
   static targets = ["files", "preview"]
   static values = {
     imageWidth: { type: Number, default: 150 },
-    imageHeight: { type: Number, default: 150 }
+    imageHeight: { type: Number, default: 150 },
+    maxImages: { type: Number, default: 5 }
   }
 
   addFile(event) {
     const originalInput = event.target
     const file = originalInput.files[0]
+
+    if (this.previewTarget.querySelectorAll("img").length >= this.maxImagesValue) {
+      alert(`You can only upload a maximum of ${this.maxImagesValue} images.`);
+      return;
+    }
 
     if (file) {
       this.createNewInputField(originalInput)
