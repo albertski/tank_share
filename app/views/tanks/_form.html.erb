@@ -53,7 +53,6 @@
       <div class="existing-images" data-multi-upload-target="preview">
         <% tank.images.each do |image| %>
           <%= image_tag image.variant(resize_to_limit: [150, 150]).processed, class: "rounded-lg shadow-md" %>
-          <%= form.hidden_field :image_ids, multiple: true, value: image.id %>
         <% end %>
       </div>
     </div>

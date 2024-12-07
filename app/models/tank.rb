@@ -14,17 +14,14 @@ class Tank < ApplicationRecord
   validates :name, :description, presence: true
 
   def update_with_attachments(params)
-    # Attach new images
     images.attach(params[:images]) if params[:images].present?
 
-    # Purge images not in `image_ids`
     if params[:image_ids].present?
       images.each do |image|
         image.purge unless params[:image_ids].include?(image.id.to_s)
       end
     end
 
-    # Update other attributes
     update(params.except(:images, :image_ids))
   end
 end
