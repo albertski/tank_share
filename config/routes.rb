@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :heaters, module: :tanks
     resources :lights, module: :tanks
     resources :pumps, module: :tanks
+    delete 'remove_image/:image_id', to: 'tanks#remove_image', as: 'remove_image'
   end
   resources :user_tanks, only: [:index]
   get 'up', to: proc { [200, {}, ['OK']] }

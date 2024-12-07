@@ -36,6 +36,15 @@ class TanksController < ApplicationController
     end
   end
 
+  def remove_image
+    @image = ActiveStorage::Attachment.find(params[:image_id])
+    @image.purge_later
+    respond_to do |format|
+      format.html { redirect_back(fallback_location: request.referrer) }
+      format.turbo_stream { render turbo_stream: turbo_stream.remove("image-#{@image.id}") }
+    end
+  end
+
   private
 
   def set_tank
