@@ -4,6 +4,10 @@ class TanksController < ApplicationController
   before_action :authenticate_user!, except: :show
   before_action :set_tank, only: %i[show destroy edit update]
 
+  def show
+    @latest_parameters = @tank.tank_parameters.latest.first
+  end
+
   def new
     @tank = Tank.new
   end
