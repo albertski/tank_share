@@ -16,20 +16,5 @@
     </div>
   </div>
 
-  <div class="mt-8">
-    <div class="relative w-full overflow-hidden rounded-lg shadow-lg">
-      <div id="slideshow" class="flex transition-transform duration-700 ease-in-out" style="transform: translateX(0);">
-        <% @tank.images.each do |image| %>
-          <%= image_tag url_for(image), class: "w-full object-cover h-48 md:h-64" %>
-        <% end %>
-      </div>
-
-      <button id="prev" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 text-gray-800 font-bold py-2 px-4 rounded-full focus:outline-none">
-        &larr;
-      </button>
-      <button id="next" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 text-gray-800 font-bold py-2 px-4 rounded-full focus:outline-none">
-        &rarr;
-      </button>
-    </div>
-  </div>
+  <%= render partial: 'tanks/slideshow', locals: { tank: @tank } %>
 </div>
