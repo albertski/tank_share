@@ -18,6 +18,26 @@
 
   <%= render partial: 'tanks/slideshow', locals: { tank: @tank } %>
 
+  <h2 class="text-xl md:text-2xl font-semibold text-gray-800 my-4"><%= @tank.name %></h2>
+
+  <div class="flex">
+    <% if @tank.total_volume %>
+      <%= render partial: 'tanks/tank_info_item', locals: { small_text: 'Total Volume', large_text: @tank.total_volume.format(with_conversion_string: false) } %>
+    <% end %>
+
+    <% if @tank.glass_thickness %>
+      <%= render partial: 'tanks/tank_info_item', locals: { small_text: 'Glass Thickness', large_text: @tank.glass_thickness.format(with_conversion_string: false) } %>
+    <% end %>
+
+    <% if @tank.display_volume %>
+      <%= render partial: 'tanks/tank_info_item', locals: { small_text: 'Display Volume', large_text: @tank.display_volume.format(with_conversion_string: false) } %>
+    <% end %>
+
+    <% if @tank.sub_volume %>
+      <%= render partial: 'tanks/tank_info_item', locals: { small_text: 'Sump Volume', large_text: @tank.sub_volume.format(with_conversion_string: false) } %>
+    <% end %>
+  </div>
+
   <% if @latest_parameters %>
     <h2 class="text-xl md:text-2xl font-semibold text-gray-800 my-4">Latest Parameters</h2>
 
