@@ -26,8 +26,10 @@
 
     <div>
       <div class="quote__actions">
-        <%= button_to "Delete", send("tank_#{equipment.equipmentable_type.demodulize.underscore}_path", equipment.tank, equipment), method: :delete, class: "btn btn--light" %>
-        <%= link_to "Edit", send("edit_tank_#{equipment.equipmentable_type.demodulize.underscore}_path", equipment.tank, equipment), class: "btn btn--light" %>
+        <% if include_manage_buttons %>
+          <%= button_to "Delete", send("tank_#{equipment.equipmentable_type.demodulize.underscore}_path", equipment.tank, equipment), method: :delete, class: "btn btn--light" %>
+          <%= link_to "Edit", send("edit_tank_#{equipment.equipmentable_type.demodulize.underscore}_path", equipment.tank, equipment), class: "btn btn--light" %>
+        <% end %>
       </div>
     </div>
   </div>

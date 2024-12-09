@@ -49,4 +49,27 @@
       <% end %>
     </div>
   <% end %>
+
+  <h2 class="text-xl md:text-2xl font-semibold text-gray-800 my-4">Equipment</h2>
+
+  <% if @tank.equipment.heaters.any? %>
+   <h3>Heaters</h3>
+    <% @tank.equipment.heaters.each do |heater| %>
+      <%= render 'tanks/equipments/equipment', equipment: heater, include_manage_buttons: false %>
+    <% end %>
+  <% end %>
+
+  <% if @tank.equipment.lights.any? %>
+   <h3>Lighting</h3>
+    <% @tank.equipment.lights.each do |light| %>
+      <%= render 'tanks/equipments/equipment', equipment: light, include_manage_buttons: false %>
+    <% end %>
+  <% end %>
+
+   <% if @tank.equipment.pumps.any? %>
+   <h3>Pumps</h3>
+    <% @tank.equipment.pumps.each do |pump| %>
+      <%= render 'tanks/equipments/equipment', equipment: pump, include_manage_buttons: false %>
+    <% end %>
+  <% end %>
 </div>

@@ -3,7 +3,7 @@
 <h2>Heaters</h2>
 <div id="<%= @tank.equipment.heaters.new.type.pluralize %>">
   <% @tank.equipment.heaters.each do |heater| %>
-    <%= render 'tanks/equipments/equipment', equipment: heater %>
+    <%= render 'tanks/equipments/equipment', equipment: heater, include_manage_buttons: true %>
   <% end %>
 </div>
 <%= turbo_frame_tag @tank.equipment.heaters.new.turbo_frame_tag %>
@@ -13,7 +13,7 @@
 <h2>Lighting</h2>
 <div id="<%= @tank.equipment.lights.new.type.pluralize %>">
   <% @tank.equipment.lights.each do |light| %>
-    <%= render 'tanks/equipments/equipment', equipment: light %>
+    <%= render 'tanks/equipments/equipment', equipment: light, include_manage_buttons: true %>
   <% end %>
 </div>
 <%= turbo_frame_tag @tank.equipment.lights.new.turbo_frame_tag %>
@@ -23,7 +23,7 @@
 <h2>Pumps</h2>
 <div id="<%= @tank.equipment.pumps.new.type.pluralize %>">
   <% @tank.equipment.pumps.each do |pump| %>
-    <%= render 'tanks/equipments/equipment', equipment: pump %>
+    <%= render 'tanks/equipments/equipment', equipment: pump, include_manage_buttons: true %>
   <% end %>
 </div>
 <%= turbo_frame_tag @tank.equipment.pumps.new.turbo_frame_tag %>
