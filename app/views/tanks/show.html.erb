@@ -20,7 +20,7 @@
 
   <h2 class="text-xl md:text-2xl font-semibold text-gray-800 my-4"><%= @tank.name %></h2>
 
-  <div class="flex">
+  <div class="flex mb-10">
     <% if @tank.total_volume %>
       <%= render partial: 'tanks/tank_info_item', locals: { small_text: 'Total Volume', large_text: @tank.total_volume.format(with_conversion_string: false) } %>
     <% end %>
@@ -41,7 +41,7 @@
   <% if @latest_parameters %>
     <h2 class="text-xl md:text-2xl font-semibold text-gray-800 my-4">Latest Parameters</h2>
 
-    <div class="flex flex-wrap gap-4">
+    <div class="flex flex-wrap gap-4 mb-10">
       <% TankParameter::TYPES.each do |type, details| %>
         <% if @latest_parameters.send(type) %>
           <%= render partial: 'tanks/parameters/parameter', locals: { name: details[:name], metric: details[:metric], value: @latest_parameters.send(type) } %>
@@ -53,23 +53,29 @@
   <h2 class="text-xl md:text-2xl font-semibold text-gray-800 my-4">Equipment</h2>
 
   <% if @tank.equipment.heaters.any? %>
-   <h3>Heaters</h3>
-    <% @tank.equipment.heaters.each do |heater| %>
-      <%= render 'tanks/equipments/equipment', equipment: heater, include_manage_buttons: false %>
-    <% end %>
+   <h3 class="text-lg">Heaters</h3>
+   <div class="flex flex-col gap-3 mb-4">
+      <% @tank.equipment.heaters.each do |heater| %>
+        <%= render 'tanks/equipments/equipment', equipment: heater, include_manage_buttons: false %>
+      <% end %>
+    </div>
   <% end %>
 
   <% if @tank.equipment.lights.any? %>
-   <h3>Lighting</h3>
-    <% @tank.equipment.lights.each do |light| %>
-      <%= render 'tanks/equipments/equipment', equipment: light, include_manage_buttons: false %>
-    <% end %>
+   <h3 class="text-lg">Lighting</h3>
+   <div class="flex flex-col gap-3 mb-4">
+      <% @tank.equipment.lights.each do |light| %>
+        <%= render 'tanks/equipments/equipment', equipment: light, include_manage_buttons: false %>
+      <% end %>
+    </div>
   <% end %>
 
    <% if @tank.equipment.pumps.any? %>
-   <h3>Pumps</h3>
-    <% @tank.equipment.pumps.each do |pump| %>
-      <%= render 'tanks/equipments/equipment', equipment: pump, include_manage_buttons: false %>
-    <% end %>
+   <h3 class="text-lg">Pumps</h3>
+   <div class="flex flex-col gap-3 mb-4">
+      <% @tank.equipment.pumps.each do |pump| %>
+        <%= render 'tanks/equipments/equipment', equipment: pump, include_manage_buttons: false %>
+      <% end %>
+    </div>
   <% end %>
 </div>
