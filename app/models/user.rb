@@ -3,10 +3,12 @@
 class User < ApplicationRecord
   include Completable
 
+  has_one_attached :avatar
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  COMPLETABLE_ATTRIBUTES = %i[first_name last_name city province postal_code country years_tanking level].freeze
+  COMPLETABLE_ATTRIBUTES = %i[first_name last_name city province postal_code country years_tanking level avatar].freeze
 
   enum level: {
     novice: 0,
