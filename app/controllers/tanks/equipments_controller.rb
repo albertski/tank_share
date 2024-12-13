@@ -2,6 +2,7 @@
 
 module Tanks
   class EquipmentsController < EquipmentsBaseController
+    before_action :authenticate_user!
     before_action :set_tank
 
     private

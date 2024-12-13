@@ -2,6 +2,7 @@
 
 module Tanks
   class ParametersController < ApplicationController
+    before_action :authenticate_user!
     before_action :set_tank
     before_action :must_be_tank_owner!
     before_action :set_tank_parameter, only: [:destroy]
