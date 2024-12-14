@@ -1,6 +1,7 @@
 <% if user_signed_in? %>
   <%= turbo_frame_tag current_user do %>
     <% if current_user.complete? %>
+      <%= render partial: 'tanks/user_info', locals: { user: current_user } %>
       <%= render partial: 'shared/components/h1', locals: { title: "Welcome #{current_user.first_name}" } %>
       <ul>
         <li><%= link_to "My Tanks", user_tanks_path, data: { turbo_frame: "_top" }, class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %></li>
