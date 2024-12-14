@@ -1,0 +1,10 @@
+<div class="container mx-auto mt-8">
+  <%= render partial: 'shared/components/h1', locals: { title: 'Tanks' } %>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-5" id="tanks">
+    <%= render partial: 'tanks/tank', collection: @tanks, locals: { show_button: false } %>
+  </div>
+
+  <div class="flex justify-center" id="load_more_button">
+    <%= render "tanks/load_more_button" %>
+  </div>
+</div>

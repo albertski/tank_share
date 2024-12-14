@@ -7,6 +7,16 @@
 <div class="block mb-2 font-bold text-gray-800" for="email">
   Sign up to be notified when the site launches and get on our list:
 </div>
-<a href="/signup" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+<a href="/signup" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mb-5">
   Sign Up
 </a>
+
+<div class="container mx-auto mt-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-5">
+    <%= render partial: 'tanks/tank', collection: @latest_tanks, locals: { show_button: false } %>
+  </div>
+
+ <div class="flex justify-center">
+    <%= link_to 'View More Tanks', tanks_path, class: 'inline-flex justify-center items-center w-full px-20 py-2 text-xl font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-700 sm:mb-0 sm:w-auto hover:bg-indigo-600 sm:rounded-full' %>
+  </div>
+</div>

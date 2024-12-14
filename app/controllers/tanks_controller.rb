@@ -1,8 +1,17 @@
 # frozen_string_literal: true
 
 class TanksController < ApplicationController
-  before_action :authenticate_user!, except: :show
+  before_action :authenticate_user!, except: %i[show index]
   before_action :set_tank, only: %i[show destroy edit update]
+
+  def index
+    @pagy, @tanks = pagy(Tank.all.order(created_at: :desc), items: 12)
+
+    respond_to do |format|
+      format.html
+      format.turbo_stream
+    end
+  end
 
   def show
     @latest_parameters = @tank.tank_parameters.latest.first

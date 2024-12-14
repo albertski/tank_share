@@ -1,0 +1,8 @@
+ <% if @pagy.next.present? %>
+    <%= button_to "Load more", tanks_path,
+      params: { page: @pagy.next },
+      method: :get,
+      class: "inline-flex justify-center items-center w-full px-20 py-2 text-xl font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-700 sm:mb-0 sm:w-auto hover:bg-indigo-600 sm:rounded-full",
+      "data-turbo-stream": true,
+      "data-turbo-submits-with": "Loading..." %>
+  <% end %>

@@ -2,6 +2,7 @@
 
 class ApplicationController < ActionController::Base
   include SetCurrentUser
+  include Pagy::Backend
 
   protected
 

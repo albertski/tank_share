@@ -1,0 +1,7 @@
+<%= turbo_stream.append "tanks" do %>
+  <%= render partial: "tanks/tank", collection: @tanks, locals: { show_button: false } %>
+<% end %>
+
+<%= turbo_stream.update "load_more_button" do %>
+  <%= render "tanks/load_more_button" %>
+<% end %>

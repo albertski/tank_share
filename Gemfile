@@ -56,6 +56,7 @@ gem 'devise'
 gem 'dotenv-rails'
 gem 'measured'
 gem 'mini_magick'
+gem 'pagy'
 gem 'sidekiq'
 
 gem 'thruster', require: false
