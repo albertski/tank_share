@@ -12,7 +12,8 @@ module Tanks
           format.turbo_stream do
             render turbo_stream: [
               turbo_stream.append(@equipment.type.pluralize, partial: 'tanks/equipments/equipment',
-                                                             locals: { equipment: @equipment }),
+                                                             locals: { equipment: @equipment,
+                                                                       include_manage_buttons: true }),
               turbo_stream.update(
                 @tank.equipment.new(equipmentable: @equipment.equipmentable_type.constantize.new).turbo_frame_tag, ''
               )
