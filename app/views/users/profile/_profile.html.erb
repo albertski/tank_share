@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <%= turbo_frame_tag current_user do %>
+  <%= turbo_frame_tag 'users_profile' do %>
     <% if current_user.complete? %>
       <%= render partial: 'tanks/user_info', locals: { user: current_user } %>
       <%= render partial: 'shared/components/h1', locals: { title: "Welcome #{current_user.first_name}" } %>
@@ -9,7 +9,7 @@
     <% else %>
       <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 xl:p-0 dark:bg-gray-800 dark:border-gray-700">
         <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-          <%= form_for current_user, method: :put, html: { class: "space-y-4 md:space-y-6" } do |f| %>
+          <%= form_for :users_profile, method: :put, html: { class: "space-y-4 md:space-y-6" } do |f| %>
             <div class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">Please complete your profile.</div>
             <div><progress class="w-full" value="<%= current_user.complete_percentage %>" max="100"></progress></div>
             <%= render "users/profile/#{current_user.incomplete_completable_attributes.first}", f: f %>
