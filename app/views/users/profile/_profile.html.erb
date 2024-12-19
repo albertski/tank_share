@@ -5,6 +5,7 @@
       <%= render partial: 'shared/components/h1', locals: { title: "Welcome #{current_user.first_name}" } %>
       <ul class="max-w-xs flex flex-col">
         <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border border-gray-200 text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-white"><%= link_to "My Tanks", user_tanks_path, data: { turbo_frame: "_top" }, class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %></li>
+        <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border border-gray-200 text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-white"><%= link_to "Edit User Profile", edit_user_path(current_user), data: { turbo_frame: "_top" }, class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %></li>
       </ul>
     <% else %>
       <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 xl:p-0 dark:bg-gray-800 dark:border-gray-700">
