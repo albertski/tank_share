@@ -14,7 +14,7 @@
             <div class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">Please complete your profile.</div>
             <div><progress class="w-full" value="<%= current_user.complete_percentage %>" max="100"></progress></div>
             <%= render "users/profile/#{current_user.incomplete_completable_attributes.first}", f: f %>
-            <%= f.submit 'Save', class: "px-20 text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" %>
+            <%= f.submit 'Save', class: "inline-flex justify-center items-center w-full px-20 py-2 text-xl font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-700 sm:mb-0 sm:w-auto hover:bg-indigo-600 sm:rounded-full" %>
           <% end %>
         </div>
       </div>
@@ -22,6 +22,6 @@
   <% end %>
 <% else %>
   <%= turbo_frame_tag 'new-user' do %>
-    <%= link_to "Sign In", new_user_session_path, class: "w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800", data: { turbo_frame: "_top" } %>
+    <%= link_to "Sign In", new_user_session_path, class: "inline-flex justify-center items-center w-full px-20 py-2 text-xl font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-700 sm:mb-0 sm:w-auto hover:bg-indigo-600 sm:rounded-full", data: { turbo_frame: "_top" } %>
   <% end %>
 <% end %>
