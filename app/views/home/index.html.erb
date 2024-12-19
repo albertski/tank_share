@@ -1,22 +1,27 @@
-<h2 class="text-3xl font-bold mb-5 text-center">
-  Tank Share Coming Soon!
-</h2>
-<p class="text-lg mb-10 text-center">
-  Tank Share is a social media site for fish tank enthusiasts. Connect with other tank owners, share information and pictures, and track your tank's progress over time.
-</p>
-<div class="block mb-2 font-bold text-gray-800" for="email">
-  Sign up to be notified when the site launches and get on our list:
-</div>
-<a href="/signup" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mb-5">
-  Sign Up
-</a>
+<div class="relative bg-cover bg-center text-white py-20 mb-8 w-full rounded" style="background-image: url('<%= image_url('tanks/tank_share_background.jpg') %>');">
+  <div class="absolute inset-0 bg-blue-700 bg-opacity-60 rounded"></div>
 
+  <div class="relative z-10">
+    <h2 class="text-5xl font-bold mb-5 text-center">
+      Welcome to Tank Share!
+    </h2>
+    <p class="text-2xl mb-10 text-center">
+      Tank Share is the ultimate <span class="text-yellow-400 font-bold">social media site</span> for fish tank enthusiasts. <br />
+      Connect with other tank owners, share information and pictures, and track your tank's progress over time.
+    </p>
+    <div class="flex justify-center">
+      <a href="/tanks/new" class="inline-flex justify-center items-center w-full px-20 py-2 text-xl font-bold text-blue-600 bg-white hover:bg-blue-100 hover:text-blue-700 sm:mb-0 sm:w-auto sm:rounded-full">
+        Add Your Tank
+      </a>
+    </div>
+  </div>
+</div>
 <div class="container mx-auto mt-8">
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-5">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
     <%= render partial: 'tanks/tank', collection: @latest_tanks, locals: { show_button: false } %>
   </div>
 
- <div class="flex justify-center">
+  <div class="flex justify-center">
     <%= link_to 'View More Tanks', tanks_path, class: 'inline-flex justify-center items-center w-full px-20 py-2 text-xl font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-700 sm:mb-0 sm:w-auto hover:bg-indigo-600 sm:rounded-full' %>
   </div>
 </div>
