@@ -13,7 +13,7 @@ RSpec.describe 'Delete Light', type: :system do
     visit tank_equipments_path(tank)
     assert_text pump.equipment.title
 
-    click_on 'Delete'
+    find('.delete').click
 
     assert_no_text pump.equipment.title
   end

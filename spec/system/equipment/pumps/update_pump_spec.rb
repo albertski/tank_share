@@ -13,7 +13,7 @@ RSpec.describe 'Update pump', type: :system do
     visit tank_equipments_path(tank)
     assert_text pump.equipment.title
 
-    click_on 'Edit'
+    find('.edit').click
 
     fill_in 'Title', with: 'Updated Title Here'
     click_on 'Save Equipment'

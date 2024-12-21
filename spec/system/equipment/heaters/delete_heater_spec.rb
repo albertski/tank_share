@@ -13,7 +13,7 @@ RSpec.describe 'Delete Heater', type: :system do
     visit tank_equipments_path(tank)
     assert_text heater.equipment.title
 
-    click_on 'Delete'
+    find('.delete').click
 
     assert_no_text heater.equipment.title
   end
