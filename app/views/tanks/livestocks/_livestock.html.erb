@@ -11,7 +11,7 @@
     <div class="flex flex-col">
        <% if livestock.livestockable.respond_to?(:coral_type) && livestock.livestockable.coral_type.present? %>
         <div class="px-3 py-1 text-xs font-semibold text-blue-600 border border-2 border-blue-600 rounded-full inline-block text-center mb-2">
-          <%= livestock.livestockable.coral_type.humanize %>
+          <%= livestock.livestockable.coral_type.humanize.upcase %>
         </div>
        <% end %>
       <div class="text-lg font-semibold text-gray-800 mb-2">

@@ -23,6 +23,6 @@ RSpec.describe 'Create Coral', type: :system do
 
     assert_text 'Bulk Reef Supply'
     assert_text '4'
-    assert_text 'Lps'
+    assert_text 'LPS'
   end
 end
