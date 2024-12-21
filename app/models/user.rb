@@ -5,8 +5,12 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  has_many :follower_relationships, class_name: 'Follow', foreign_key: 'followed_id', dependent: :destroy
+  has_many :followers, through: :follower_relationships, source: :follower
+  has_many :followee_relationships, class_name: 'Follow', foreign_key: 'follower_id', dependent: :destroy
+  has_many :followees, through: :followee_relationships, source: :followed
+
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
   COMPLETABLE_ATTRIBUTES = %i[first_name last_name city province postal_code country years_tanking level avatar].freeze
 
@@ -24,4 +28,8 @@ class User < ApplicationRecord
   }
 
   has_many :tanks
+
+  def following?(user)
+    followees.include?(user)
+  end
 end

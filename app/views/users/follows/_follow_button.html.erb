@@ -1,0 +1,9 @@
+<div id="user-follow-button">
+  <% if current_user != user %>
+    <% if current_user.following?(user) %>
+      <%= button_to 'Unfollow', user_follow_path(user_id: user.id, id: current_user.id), method: :delete, class: "inline-flex justify-center items-center w-full px-10 py-2 text-xl font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-700 sm:mb-0 sm:w-auto hover:bg-indigo-600 sm:rounded-full" %>
+    <% else %>
+      <%= button_to 'Follow', user_follows_path(user), method: :post, class: "inline-flex justify-center items-center w-full px-10 py-2 text-xl font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-700 sm:mb-0 sm:w-auto hover:bg-indigo-600 sm:rounded-full" %>
+    <% end %>
+  <% end %>
+</div>

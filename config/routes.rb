@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   post 'signup', to: 'email_signup#create'
   get 'users/profile', to: 'users/profile#profile'
   put 'users/profile', to: 'users/profile#profile_update'
-  resources :users, only: %i[edit update]
+  resources :users, only: %i[edit update] do
+    resources :follows, module: :users, only: %i[create destroy]
+  end
   resources :tanks do
     resources :parameters, module: :tanks
     resources :equipments, module: :tanks

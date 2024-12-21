@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_19_233151) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_21_162012) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -75,6 +75,16 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_19_233151) do
   create_table "fish", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.bigint "follower_id", null: false
+    t.bigint "followed_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followed_id"], name: "index_follows_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_follows_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_follows_on_follower_id"
   end
 
   create_table "heaters", force: :cascade do |t|
@@ -162,6 +172,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_19_233151) do
     t.integer "years_tanking"
     t.integer "level"
     t.integer "role", default: 0
+    t.integer "followers_count", default: 0, null: false
+    t.integer "followees_count", default: 0, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -169,6 +181,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_19_233151) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "equipment", "tanks"
+  add_foreign_key "follows", "users", column: "followed_id"
+  add_foreign_key "follows", "users", column: "follower_id"
   add_foreign_key "livestocks", "tanks"
   add_foreign_key "tank_parameters", "tanks"
   add_foreign_key "tanks", "users"
