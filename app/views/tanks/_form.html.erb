@@ -47,7 +47,7 @@
       <div class="photos">
         <%= form.label :images, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
         <% if tank.images.count < 5 %>
-          <%= form.file_field :images, multiple: true, direct_upload: true, data: { action: "multi-upload#addFile", multi_upload_target: "input" }, class: "block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-indigo-500" %>
+          <%= form.file_field :images, multiple: true, accept: 'image/*', direct_upload: true, data: { action: "multi-upload#addFile", multi_upload_target: "input" }, class: "block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-indigo-500" %>
         <% end %>
       </div>
       <div data-multi-upload-target="files" class="hidden"></div>
