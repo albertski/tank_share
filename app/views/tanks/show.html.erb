@@ -34,6 +34,34 @@
     </div>
   <% end %>
 
+  <h2 class="text-xl md:text-2xl font-semibold text-gray-800 my-4">Livestock</h2>
+  <% if @tank.livestocks.fish.any? %>
+   <h3 class="text-lg">Fish</h3>
+   <div class="flex flex-col gap-3 mb-4">
+      <% @tank.livestocks.fish.each do |fish| %>
+        <%= render 'tanks/livestocks/livestock', livestock: fish, include_manage_buttons: false %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if @tank.livestocks.coral.any? %>
+   <h3 class="text-lg">Coral</h3>
+   <div class="flex flex-col gap-3 mb-4">
+      <% @tank.livestocks.coral.each do |coral| %>
+        <%= render 'tanks/livestocks/livestock', livestock: coral, include_manage_buttons: false %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if @tank.livestocks.invertebrates.any? %>
+   <h3 class="text-lg">Invertebrate</h3>
+   <div class="flex flex-col gap-3 mb-4">
+      <% @tank.livestocks.invertebrates.each do |invertebrate| %>
+        <%= render 'tanks/livestocks/livestock', livestock: invertebrate, include_manage_buttons: false %>
+      <% end %>
+    </div>
+  <% end %>
+
   <h2 class="text-xl md:text-2xl font-semibold text-gray-800 my-4">Equipment</h2>
 
   <% if @tank.equipment.heaters.any? %>
