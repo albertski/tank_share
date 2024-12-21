@@ -1,0 +1,34 @@
+<div class="container mx-auto p-4">
+  <%= render partial: 'shared/components/h1', locals: { title: 'Tank Livestock' } %>
+  <div class="py-4"><%= link_to "← Back to Tank Edit", edit_tank_path(@tank), class: 'block w-full bg-gray-300 text-black px-4 py-2 rounded-lg hover:bg-gray-2000' %></div>
+
+  <h2 class="text-xl md:text-2xl font-semibold text-gray-800 my-4">Fish</h2>
+  <div id="<%= @tank.livestocks.fish.new.type.pluralize %>" class="mb-6">
+    <% @tank.livestocks.fish.each do |fish| %>
+      <%= render 'tanks/livestocks/livestock', livestock: fish, include_manage_buttons: true %>
+    <% end %>
+  </div>
+  <%= turbo_frame_tag @tank.livestocks.fish.new.turbo_frame_tag %>
+
+  <%= link_to 'Add Fish', new_tank_fish_path(@tank), class: 'inline-flex justify-center items-center w-full px-20 py-2 text-xl font-bold text-white bg-gradient-to-r from-gray-400 to-gray-700 hover:from-gray-500 hover:to-gray-700 sm:mb-0 sm:w-auto hover:bg-gray-600 sm:rounded-full', data: { turbo_frame: @tank.livestocks.fish.new.turbo_frame_tag } %>
+
+  <h2 class="text-xl md:text-2xl font-semibold text-gray-800 my-4">Invertebrates</h2>
+  <div id="<%= @tank.livestocks.invertebrates.new.type.pluralize %>" class="mb-6">
+    <% @tank.livestocks.invertebrates.each do |invertebrate| %>
+      <%= render 'tanks/livestocks/livestock', livestock: invertebrate, include_manage_buttons: true %>
+    <% end %>
+  </div>
+  <%= turbo_frame_tag @tank.livestocks.invertebrates.new.turbo_frame_tag %>
+
+  <%= link_to 'Add Invertebrate', new_tank_invertebrate_path(@tank), class: 'inline-flex justify-center items-center w-full px-20 py-2 text-xl font-bold text-white bg-gradient-to-r from-gray-400 to-gray-700 hover:from-gray-500 hover:to-gray-700 sm:mb-0 sm:w-auto hover:bg-gray-600 sm:rounded-full', data: { turbo_frame: @tank.livestocks.invertebrates.new.turbo_frame_tag } %>
+
+  <h2 class="text-xl md:text-2xl font-semibold text-gray-800 my-4">Corals</h2>
+  <div id="<%= @tank.livestocks.corals.new.type.pluralize %>" class="mb-6">
+    <% @tank.livestocks.coral.each do |coral| %>
+      <%= render 'tanks/livestocks/livestock', livestock: coral, include_manage_buttons: true %>
+    <% end %>
+  </div>
+  <%= turbo_frame_tag @tank.livestocks.corals.new.turbo_frame_tag %>
+
+  <%= link_to 'Add Coral', new_tank_coral_path(@tank), class: 'inline-flex justify-center items-center w-full px-20 py-2 text-xl font-bold text-white bg-gradient-to-r from-gray-400 to-gray-700 hover:from-gray-500 hover:to-gray-700 sm:mb-0 sm:w-auto hover:bg-gray-600 sm:rounded-full', data: { turbo_frame: @tank.livestocks.corals.new.turbo_frame_tag } %>
+</div>

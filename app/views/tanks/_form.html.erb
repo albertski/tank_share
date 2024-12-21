@@ -70,9 +70,4 @@
   </div>
 
   <hr class="my-5" />
-
-  <% if tank.persisted? %>
-    <div class="py-4"><%= link_to 'Add Parameters', tank_parameters_path(tank), class: 'block w-full bg-gray-300 text-black px-4 py-2 rounded-lg hover:bg-gray-200' %></div>
-    <div class="py-4"><%= link_to 'Add Equipment', tank_equipments_path(tank), class: 'block w-full bg-gray-300 text-black px-4 py-2 rounded-lg hover:bg-gray-200' %></div>
-  <% end %>
 <% end %>

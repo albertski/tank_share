@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_11_13_235433) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_19_233151) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_13_235433) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "corals", force: :cascade do |t|
+    t.integer "coral_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "email_signups", force: :cascade do |t|
     t.string "email"
     t.string "first_name"
@@ -66,7 +72,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_13_235433) do
     t.index ["tank_id"], name: "index_equipment_on_tank_id"
   end
 
+  create_table "fish", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "heaters", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "invertebrates", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -74,6 +90,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_13_235433) do
   create_table "lights", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "livestocks", force: :cascade do |t|
+    t.string "name"
+    t.date "purchase_date"
+    t.integer "quantity"
+    t.string "livestockable_type", null: false
+    t.bigint "livestockable_id", null: false
+    t.bigint "tank_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["livestockable_type", "livestockable_id"], name: "index_livestocks_on_livestockable"
+    t.index ["tank_id"], name: "index_livestocks_on_tank_id"
   end
 
   create_table "pumps", force: :cascade do |t|
@@ -140,6 +169,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_13_235433) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "equipment", "tanks"
+  add_foreign_key "livestocks", "tanks"
   add_foreign_key "tank_parameters", "tanks"
   add_foreign_key "tanks", "users"
 end

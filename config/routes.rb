@@ -22,6 +22,10 @@ Rails.application.routes.draw do
     resources :heaters, module: :tanks
     resources :lights, module: :tanks
     resources :pumps, module: :tanks
+    resources :livestocks, module: :tanks
+    resources :fish, module: :tanks
+    resources :corals, module: :tanks
+    resources :invertebrates, module: :tanks
     delete 'remove_image/:image_id', to: 'tanks#remove_image', as: 'remove_image'
   end
   resources :user_tanks, only: [:index]

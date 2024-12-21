@@ -5,6 +5,7 @@ class Tank < ApplicationRecord
   belongs_to :user
   has_many :tank_parameters
   has_many :equipment
+  has_many :livestocks
 
   measured Measured::Volume, :total_volume
   measured Measured::Volume, :display_volume

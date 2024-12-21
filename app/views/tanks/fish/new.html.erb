@@ -1,0 +1,7 @@
+<%= render partial: 'tanks/livestocks/new_livestock',
+           locals: {
+             title: 'New Fish',
+             tank: @tank,
+             livestock: @livestock,
+             livestock_frame_tag: @tank.livestocks.fish.new.turbo_frame_tag
+           } %>
