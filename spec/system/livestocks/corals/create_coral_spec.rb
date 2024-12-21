@@ -17,12 +17,12 @@ RSpec.describe 'Create Coral', type: :system do
     fill_in 'Name', with: 'Bulk Reef Supply'
     fill_in 'Purchase date', with: '12/01/2021'
     fill_in 'Quantity', with: 4
-    select 'Star Coral', from: 'livestock_coral_type'
+    select 'Lps', from: 'livestock_coral_type'
 
     click_on 'Save'
 
     assert_text 'Bulk Reef Supply'
     assert_text '4'
-    assert_text 'Star coral'
+    assert_text 'Lps'
   end
 end

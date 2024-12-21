@@ -3,16 +3,20 @@ module Livestocks
     include Livestockable
 
     enum coral_type: {
-      brain_coral: 0,
-      staghorn_coral: 1,
-      elkhorn_coral: 2,
-      fan_coral: 3,
-      mushroom_coral: 4,
-      plate_coral: 5,
-      leather_coral: 6,
-      star_coral: 7,
-      flower_coral: 8,
-      pillar_coral: 9
+      lps: 0,                # Large Polyp Stony
+      sps: 1,                # Small Polyp Stony
+      soft: 2,               # Soft Corals
+      nps: 3,                # Non-Photosynthetic Corals
+      mushroom: 4,           # Mushroom Corals
+      gorgonian: 5,          # Gorgonians
+      encrusting: 6,         # Encrusting Corals
+      zoanthid: 7,           # Zoanthids
+      leather: 8,            # Leather Corals
+      plate: 9,              # Plate Corals
+      branching: 10,         # Branching Corals
+      foliose: 11,           # Foliose Corals
+      massive: 12,           # Massive Corals
+      free_living: 13        # Free-Living Corals
     }
   end
 end
